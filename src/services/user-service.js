@@ -90,8 +90,16 @@ class UserService {
             throw error;
         }
     }
-
+            
     isAdmin(userId) {
+        try {
+            return this.userRepository.isAdmin(userId);
+        } catch (error) {
+            console.log("Something went wrong in the service layer");
+            throw error;
+        }
+    }
+        isUserAdmin(userId) {
         try {
             return this.userRepository.isAdmin(userId);
         } catch (error) {
